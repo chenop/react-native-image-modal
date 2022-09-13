@@ -616,11 +616,11 @@ export default class ImageDetail extends React.Component<Props> {
       }),
       width: this._animatedFrame.interpolate({
         inputRange: [0, 1],
-        outputRange: [origin.width, windowWidth],
+        outputRange: [origin.width, imageStyle?.width || windowWidth],
       }),
       height: this._animatedFrame.interpolate({
         inputRange: [0, 1],
-        outputRange: [origin.height, windowHeight],
+        outputRange: [origin.height, imageStyle?.height || windowHeight],
       }),
     };
 
@@ -701,8 +701,8 @@ export default class ImageDetail extends React.Component<Props> {
             style={[
               imageStyle,
               {
-                width: '100%',
-                height: '100%',
+                width: imageStyle?.width || '100%',
+                height: imageStyle?.height || '100%',
               },
             ]}
             source={source}
