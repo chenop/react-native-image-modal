@@ -688,6 +688,7 @@ export default class ImageDetail extends React.Component<Props> {
           overflow: 'hidden',
           width: '100%',
           height: '100%',
+          justifyContent: 'center',
         }}
         {...(this._imagePanResponder ? this._imagePanResponder.panHandlers : undefined)}
       >
